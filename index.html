@@ -1,28 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Happy Birthday Sonika 🎀</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sonika!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 </head>
-<body class="page1">
+<body>
 
-  <h1>Happy Birthday Sonika 💖</h1>
+    <div class="floating-bg" id="floating-container"></div>
 
-  <div class="cake-container">
-    <img src="assets/cake.png" class="cake" id="cake">
-  </div>
+    <audio id="bg-music" loop>
+        <source src="assets/sounds/bg-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="cut-sound">
+        <source src="assets/sounds/cut-sound.mp3" type="audio/mpeg">
+    </audio>
 
-  <button id="cutBtn">Tap To Cut The Cake 🎂</button>
 
-  <div id="popup" class="hidden">
-    <img src="assets/cake.png" class="small-cake">
-    <p>Yayyy! Cake cut successfully 🎉</p>
-  </div>
+    <section id="page-1" class="page active-section">
+        <h1 class="main-title pixel-font">Happy Birthday Sonika 🎀<br><span>February 16</span></h1>
+        
+        <div class="cake-container">
+            <div class="pixel-cake" id="main-cake">
+                <div class="candles">
+                    <div class="candle c1"><div class="flame"></div></div>
+                    <div class="candle c2"><div class="flame"></div></div>
+                    <div class="candle c3"><div class="flame"></div></div>
+                    <div class="candle c4"><div class="flame"></div></div>
+                    <div class="candle c5"><div class="flame"></div></div>
+                </div>
+                <div class="cake-top"></div>
+                <div class="cake-middle"></div>
+                <div class="cake-bottom"></div>
+            </div>
+            <div class="cake-slice hidden" id="cake-slice"></div>
+        </div>
 
-  <audio id="bgMusic" loop>
-    <source src="assets/music.mp3" type="audio/mpeg">
-  </audio>
+        <div class="controls-p1">
+            <button id="cut-cake-btn" class="pixel-btn">Tap to Cut the Cake 🔪</button>
+        </div>
 
-  <script src="script.js"></script>
+        <div id="post-cut-content" class="hidden">
+            <img src="assets/images/cake-pop.png" alt="Small Cake" class="pop-up-cake">
+            <p class="wish-text pixel-font">Make a wish 💕</p>
+            <button id="to-page-2-btn" class="pixel-btn next-btn hidden">Go to next page ➡️</button>
+        </div>
+    </section>
+
+
+    <section id="page-2" class="page hidden-section">
+        <div class="letter-container">
+            <div class="strawberry-decor tl">🍓</div>
+            <div class="strawberry-decor tr">🍓</div>
+            <div class="paper">
+                <p id="typewriter-text" class="typewriter-style" 
+                   data-text="My dearest Sonika,
+
+Happy Birthday! I wanted to take a moment today to tell you just how much you mean to me.
+
+Thank you for being the most incredibly supportive partner. In moments of doubt, you are my steady comfort, and in happy times, you make everything shine so much brighter. Life is simply better with you in it.
+
+You bring so much happiness into my world just by being you. I promise to cherish you, support you, and love you, today and forever.
+
+All my love.">
+                </p>
+                 <span class="cursor">|</span>
+            </div>
+            <div class="strawberry-decor bl">🍓</div>
+            <div class="strawberry-decor br">🍓</div>
+        </div>
+        <button id="to-page-3-btn" class="pixel-btn next-btn hidden disabled">See Your Surprise 🎁</button>
+    </section>
+
+
+    <section id="page-3" class="page hidden-section">
+        <div id="confetti-container"></div>
+
+        <div class="photo-frame">
+             <img src="assets/images/sonika-photo.jpg" alt="Sonika" class="main-photo">
+        </div>
+
+        <div class="final-message-container">
+            <img src="assets/images/cake-pop.png" alt="Mini Cake" class="mini-cake-corner">
+            <h2 class="pixel-font final-msg">Happy Birthday, Sonika ❤️<br>May your dreams come true.<br>I’m lucky to have you.</h2>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
